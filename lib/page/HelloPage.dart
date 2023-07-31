@@ -1,5 +1,6 @@
 import 'package:basic_flutter_2/page/FruitPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HelloPage extends StatelessWidget {
   const HelloPage({Key? key}) : super(key: key);
@@ -23,7 +24,8 @@ class HelloPage extends StatelessWidget {
             GestureDetector(
               onTap:(){
                 print("넘어갑니다");
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => FruitPage()));
+                Get.to(()=>FruitPage());
+
               },
                 child: Text("다음페이지로 넘어가기",style: TextStyle(fontSize: 20 , color: Colors.red),)
             ),
