@@ -1,4 +1,6 @@
+import 'package:basic_flutter_2/page/FruitDetailPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FruitPage extends StatelessWidget {
   const FruitPage({Key? key}) : super(key: key);
@@ -11,9 +13,23 @@ class FruitPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("사과"),
+          GestureDetector(
+              onTap: (){
+                Get.to(()=>FruitDetailPage(
+                    fruitName: "사과",
+                    fruitImagePath: 'assets/images/apple.webp'));
+              },
+              child: Text("사과")),
           Image.asset('assets/images/apple.webp',width: 100,),
-          Text("바나나"),
+          GestureDetector(
+              onTap: (){
+                Get.to(()=>FruitDetailPage(
+                    fruitName: "바나나",
+                    fruitImagePath: 'assets/images/banana.jpeg',
+                    detail: "맛좋고 당도좋은 바나나",
+                ));
+              },
+              child: Text("바나나")),
           Image.asset('assets/images/banana.jpeg',width: 200,),
           Text("인터넷에서 이미지 가져오기"),
           Row(
